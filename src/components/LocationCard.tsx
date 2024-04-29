@@ -7,7 +7,7 @@ import Location from "../types/locations";
 import { HoursStatus } from "@yext/pages-components";
 const LocationCard = ({ result }: CardProps<Location>) => {
   const { name, id, distance } = result;
-  const { address, hours, timezone, mainPhone, c_tertiaryCTA? } = result.rawData;
+  const { address, hours, timezone, mainPhone, c_tertiaryCTA } = result.rawData;
   const { selectedLocationId, setSelectedLocationId } = useLocationsContext();
   const getDirectionsUrl = (addr?: any) => {
     const region = addr.region ? ` ${addr.region}` : ``;
@@ -87,7 +87,11 @@ const LocationCard = ({ result }: CardProps<Location>) => {
             <a href={`tel:${mainPhone}`} className="cta2">
               Call
             </a>
-            {c_tertiaryCTA && <a href={c_tertiaryCTA.link} className="cta3">{c_tertiaryCTA.label}</a>}
+            {c_tertiaryCTA && (
+              <a href={c_tertiaryCTA.link} className="cta3">
+                {c_tertiaryCTA.label}
+              </a>
+            )}
           </div>
         </div>
       </div>

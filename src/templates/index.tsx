@@ -38,8 +38,6 @@ export const getHeadConfig: GetHeadConfig<
 };
 
 const Search: Template<TemplateRenderProps> = ({ document }) => {
-  console.log(JSON.stringify(document._site));
-
   return (
     <LocationsProvider>
       <PageLayout>

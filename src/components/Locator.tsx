@@ -13,7 +13,6 @@ import {
   Pagination,
   ResultsCount,
   SearchBar,
-  StandardFacet,
   VerticalResults,
   onSearchFunc,
 } from "@yext/search-ui-react";
@@ -21,11 +20,11 @@ import { LngLat, LngLatBounds } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import * as React from "react";
 import { useEffect, useState } from "react";
+import { IoIosClose } from "react-icons/io";
+import { useLocationsContext } from "../common/LocationsContext";
 import Loader from "./Loader";
 import LocationCard from "./LocationCard";
 import MapPin from "./MapPin";
-import { useLocationsContext } from "../common/LocationsContext";
-import { IoIosClose } from "react-icons/io";
 
 type verticalKey = {
   verticalKey: string;
@@ -45,14 +44,9 @@ const Locator = ({ verticalKey }: verticalKey) => {
   } = useLocationsContext();
   useEffect(() => {
     if (selectedLocationId) {
-      console.log(selectedLocationId);
       _setSelectedLocationId(selectedLocationId);
     }
   }, [selectedLocationId]);
-
-  useEffect(() => {
-    console.log(_selectedLocationId);
-  }, [_selectedLocationId]);
 
   useEffect(() => {
     searchActions.setVertical(verticalKey);
@@ -133,7 +127,10 @@ const Locator = ({ verticalKey }: verticalKey) => {
                   searchOnChange={true}
                 />
                 <div className="flex flex-row gap-4 mb-8">
-                  <div className="applyButton" onClick={(e) => setShowFacets(!showFacets)}>
+                  <div
+                    className="applyButton"
+                    onClick={(e) => setShowFacets(!showFacets)}
+                  >
                     Apply
                   </div>
                   <div
