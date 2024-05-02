@@ -43,7 +43,9 @@ const Search: Template<TemplateRenderProps> = ({ document }) => {
     <LocationsProvider>
       <PageLayout _site={_site}>
         <div>
-          <Locator verticalKey={"locations"}></Locator>
+          <Locator
+            verticalKey={import.meta.env.YEXT_PUBLIC_VERTICAL_KEY}
+          ></Locator>
         </div>
       </PageLayout>
     </LocationsProvider>
