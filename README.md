@@ -32,6 +32,8 @@
   - _YEXT_PUBLIC_MAP_API_KEY_: (Will be shared in chat)
   - _YEXT_PUBLIC_STATICMAP_API_KEY_: (Will be shared in chat)
   - _YEXT_PUBLIC_ACCOUNTTYPE_: PROD (if production) or SBX (if not production)
+  - _YEXT_PUBLIC_VERTICAL_KEY_: your locatios vertical key
+
     
     ![Search Config](/docImages/search.png)
 
