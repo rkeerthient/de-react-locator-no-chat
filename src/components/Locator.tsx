@@ -108,7 +108,7 @@ const Locator = ({ verticalKey }: verticalKey) => {
         <div className="flex flex-row">
           <div
             className="flex flex-col w-[40%] p-4 overflow-scroll relative"
-            style={{ height: "95vh" }}
+            style={{ height: "80vh" }}
           >
             <div
               className={`facetsButton ${nr && nr.every((v) => v === true) ? `block` : `hidden`}`}
@@ -155,7 +155,7 @@ const Locator = ({ verticalKey }: verticalKey) => {
                       CardComponent={LocationCard}
                       customCssClasses={{
                         verticalResultsContainer:
-                          "flex flex-col gap-4 bg-white",
+                          "flex flex-col gap-4 bg-white ",
                       }}
                     />
                   )}
@@ -172,7 +172,7 @@ const Locator = ({ verticalKey }: verticalKey) => {
               </>
             )}
           </div>
-          <div className=" w-[60%] h-screen">
+          <div className=" w-[60%] h-[80vh]">
             <MapboxMap
               onDrag={onDrag}
               mapboxOptions={{
